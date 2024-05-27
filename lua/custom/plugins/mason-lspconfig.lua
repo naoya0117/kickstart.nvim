@@ -10,7 +10,9 @@ return {
     local lspconfig = require 'lspconfig'
 
     mason.setup()
-    mason_lspconfig.setup()
+    mason_lspconfig.setup {
+      automatic_installation = true,
+    }
     mason_lspconfig.setup_handlers {
       function(server_name)
         lspconfig[server_name].setup {}
